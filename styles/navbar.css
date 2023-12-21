@@ -1,0 +1,8 @@
+nav {
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+}
+
+.navbar-collapse {
+    justify-content: center;
+}
