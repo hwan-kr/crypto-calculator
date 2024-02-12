@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PNL Calculator</title>
+        <link rel="stylesheet" href="/styles/pnl.css" />
+    </head>
+    <body>
+        <div class="calculator">
+            <h2>PNL Calculator</h2>
+            <form id="pnlForm">
+                <!-- 롱/숏 버튼 -->
+                <div class="position-buttons">
+                    <button
+                        type="button"
+                        class="position-button long"
+                        id="longButton"
+                    >
+                        Long
+                    </button>
+                    <button
+                        type="button"
+                        class="position-button short"
+                        id="shortButton"
+                    >
+                        Short
+                    </button>
+                </div>
+                <!-- 진입/청산 가격 필드 -->
+                <div class="field">
+                    <label for="entryPrice">Entry Price:</label>
+                    <input type="number" id="entryPrice" step="any" />
+                </div>
+                <div class="field">
+                    <label for="exitPrice">Exit Price:</label>
+                    <input type="number" id="exitPrice" step="any" />
+                </div>
+                <!-- 수량 선택 및 입력 필드 -->
+                <div class="field quantity-field">
+                    <div class="quantity-type-buttons">
+                        <button
+                            type="button"
+                            class="quantity-type-button usdt"
+                            id="usdtButton"
+                        >
+                            USDT
+                        </button>
+                        <button
+                            type="button"
+                            class="quantity-type-button units"
+                            id="unitsButton"
+                        >
+                            Units
+                        </button>
+                    </div>
+                    <div class="quantity-input">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" step="any" />
+                    </div>
+                </div>
+                <!-- 레버리지 및 수수료 필드 -->
+                <div class="field">
+                    <label for="leverage">Leverage:</label>
+                    <input
+                        type="number"
+                        id="leverage"
+                        min="1"
+                        step="any"
+                        value="1"
+                    />
+                </div>
+                <div class="field fees">
+                    <div>
+                        <label for="entryFee">Entry Fee (%):</label>
+                        <input
+                            type="number"
+                            id="entryFee"
+                            step="any"
+                            value="0"
+                        />
+                    </div>
+                    <div>
+                        <label for="exitFee">Exit Fee (%):</label>
+                        <input
+                            type="number"
+                            id="exitFee"
+                            step="any"
+                            value="0"
+                        />
+                    </div>
+                </div>
+                <button type="button" class="button" onclick="calculatePNL()">
+                    Calculate
+                </button>
+            </form>
+            <div id="result"></div>
+        </div>
+        <script src="/scripts/pnl.js"></script>
+    </body>
+</html>

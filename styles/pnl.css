@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.calculator {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.field {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.field input[type="number"] {
+    width: calc(50% - 10px);
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.position-button, .quantity-type-button {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    font-weight: bold;
+    width: calc(50% - 10px); /* 조정된 너비 */
+}
+
+.long {
+    background-color: #28a745;
+    color: #ffffff;
+}
+
+.short {
+    background-color: #dc3545;
+    color: #ffffff;
+}
+
+.long.active, .short.active {
+    background-color: #4CAF50; /* 롱 버튼 활성화 색상 변경 */
+    color: white;
+}
+
+.usdt.active, .units.active {
+    background-color: #2196F3; /* USDT 버튼 활성화 색상 변경 */
+    color: white;
+}
+
+.position-button.active, .quantity-type-button.active {
+    border-color: #007bff;
+    background-color: #525252;
+    color: white;
+}
+
+.position-button:focus, .quantity-type-button:focus {
+    outline: none;
+}
+
+.button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+#result {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+}
