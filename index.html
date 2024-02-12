@@ -10,17 +10,43 @@
             href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap"
             rel="stylesheet"
         />
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+            crossorigin="anonymous"
+        ></script>
         <link rel="stylesheet" href="./share.css" />
-        <link rel="stylesheet" href="./styles/navabar.css" />
+        <link rel="stylesheet" href="./styles/navbar.css" />
     </head>
     <body>
-        <nav id="main-nav">
-            <ul>
-                <li><a class="links" href="./index.html">Home</a></li>
-                <li><a class="links" href="./pages/pnl.html">PNL Calculator</a></li>
-                <li><a class="links" href="./pages/target-price.html">Target Price Calculator</a></li>
-                <li><a class="links" href="./pages/liquidation.html"></a>Liquidation Calculator</li>
-            </ul>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav main-navbar">
+                        <a class="nav-link active" aria-current="page" href="#"
+                            >PNL Calculator</a
+                        >
+                        <a class="nav-link" href="#">Target Price Calculator</a>
+                        <a class="nav-link" href="#">Liquidation Calculator</a>
+                        <!-- <a class="nav-link disabled" aria-disabled="true"
+                            >Disabled</a
+                        > -->
+                    </div>
+                </div>
+            </div>
         </nav>
         <header></header>
         <main></main>
