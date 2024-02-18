@@ -15,7 +15,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
 }
 
 h2 {
@@ -25,9 +25,7 @@ h2 {
 
 .field {
     margin-top: 15px;
-    margin-bottom: 15px;
-    display: flex;
-    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .field label {
@@ -35,69 +33,145 @@ h2 {
     margin-bottom: 5px;
 }
 
-.field input[type="number"] {
-    width: calc(50% - 10px);
-    padding: 8px;
+/* "Entry Fee"와 "Exit Fee"를 제외한 필드가 각각 한 줄을 차지하도록 조정 */
+.field input[type="number"],
+.field select {
+    display: block; /* 각 필드를 블록 요소로 만들어 한 줄을 차지하게 함 */
+    width: 90%; /* 부모 요소의 전체 너비를 차지하게 함 */
+    margin-bottom: 10px; /* 필드 간의 간격 조정 */
     border-radius: 4px;
-    border: 1px solid #ddd;
-    box-sizing: border-box;
+    font-size: 18px;
+    border: 2px solid #ccc; /* 테두리 스타일 조정 */
+    padding: 10px 15px;
 }
 
-.position-button, .quantity-type-button {
-    padding: 8px 12px;
-    border: 1px solid #ddd;
+.quantity-input {
+    display: flex;
+}
+
+#quantity,
+#quantity-type {
+    margin: 5px;
+}
+
+.quantity-field input[type="number"],
+.quantity-field select,
+.position-button,
+.button {
+    padding: 10px 15px; /* 패딩 증가 */
+    font-size: 18px; /* 폰트 크기 조정 */
     border-radius: 4px;
-    background-color: #f9f9f9;
+    border: 2px solid #ccc; /* 테두리 스타일 조정 */
+}
+
+.quantity-input label {
+    display: flex;
+    align-items: center;
+}
+
+.position-button {
+    background-color: lightgrey; /* 테마 색상 적용 */
+    color: white;
     cursor: pointer;
     font-weight: bold;
-    width: calc(50% - 10px); /* 조정된 너비 */
+    width: calc(50% - 10px);
+    border: none; /* 테두리 제거 */
 }
 
-.long {
-    background-color: #28a745;
-    color: #ffffff;
+.long:hover,
+.long.active {
+    background-color: #089981;
 }
 
-.short {
-    background-color: #dc3545;
-    color: #ffffff;
+.short:hover,
+.short.active {
+    background-color: #f23645;
 }
 
-.long.active, .short.active {
-    background-color: #4CAF50; /* 롱 버튼 활성화 색상 변경 */
-    color: white;
+.long:focus {
+    outline: 3px solid #089981;
+    outline-offset: 2px;
 }
 
-.usdt.active, .units.active {
-    background-color: #2196F3; /* USDT 버튼 활성화 색상 변경 */
-    color: white;
+.short:focus {
+    outline: 3px solid #f23645;
+    outline-offset: 2px;
 }
 
-.position-button.active, .quantity-type-button.active {
-    border-color: #007bff;
-    background-color: #525252;
-    color: white;
+.fees {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr 1fr;
+    margin-bottom: 20px;
+    align-items: center;
+    text-align: center;
 }
 
-.position-button:focus, .quantity-type-button:focus {
-    outline: none;
-}
-
-.button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
+.fees input[type="number"] {
+    width: 50%; /* 부모 요소의 전체 너비를 차지하게 함 */
     border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+    font-size: 18px;
+    border: 2px solid #ccc; /* 테두리 스타일 조정 */
+    padding: 10px 15px;
 }
 
-.button:hover {
-    background-color: #0056b3;
+/* .fees image {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+} */
+
+.info-icon {
+    display: inline-block;
+    text-decoration: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #bbdefb;
+    color: white;
+    text-align: center;
+    line-height: 24px;
+    cursor: pointer;
+    font-weight: bold;
+    position: relative;
+    font-size: 16px;
+}
+
+/* Tooltip for the info icon */
+.info-tooltip {
+    display: none;
+    width: 200px;
+    background-color: #f9f9f9;
+    color: #000;
+    text-align: center;
+    border-radius: 6px;
+    border: 1px solid black;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.info-icon:hover .info-tooltip {
+    display: block;
+}
+
+.info-icon:hover {
+    background-color: #95cfff;
+}
+
+#calculate-btn {
+    background-color: #4a90e2; /* 테마 색상 적용 */
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    width: calc(100% - 10px);
+    border: none; /* 테두리 제거 */
+}
+
+#calculate-btn:hover {
+    background-color: #3e79bd;
 }
 
 #result {

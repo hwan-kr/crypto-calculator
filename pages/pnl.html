@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>PNL Calculator</title>
         <link rel="stylesheet" href="/styles/pnl.css" />
+        <script src="/scripts/pnl.js" defer></script>
     </head>
     <body>
         <div class="calculator">
@@ -37,26 +38,17 @@
                     <input type="number" id="exitPrice" step="any" />
                 </div>
                 <!-- 수량 선택 및 입력 필드 -->
-                <div class="field quantity-field">
-                    <div class="quantity-type-buttons">
-                        <button
-                            type="button"
-                            class="quantity-type-button usdt"
-                            id="usdtButton"
-                        >
-                            USDT
-                        </button>
-                        <button
-                            type="button"
-                            class="quantity-type-button units"
-                            id="unitsButton"
-                        >
-                            Units
-                        </button>
-                    </div>
+
+                <div class="quantity-field">
+                    <!-- <div class="field quantity-field">
+                    field 클래스 적용 할 것인가? -->
                     <div class="quantity-input">
                         <label for="quantity">Quantity:</label>
                         <input type="number" id="quantity" step="any" />
+                        <select name="quantity-type" id="quantity-type">
+                            <option value="usdt">USDT</option>
+                            <option value="units">UNITS</option>
+                        </select>
                     </div>
                 </div>
                 <!-- 레버리지 및 수수료 필드 -->
@@ -70,32 +62,28 @@
                         value="1"
                     />
                 </div>
-                <div class="field fees">
-                    <div>
-                        <label for="entryFee">Entry Fee (%):</label>
-                        <input
-                            type="number"
-                            id="entryFee"
-                            step="any"
-                            value="0"
-                        />
-                    </div>
-                    <div>
-                        <label for="exitFee">Exit Fee (%):</label>
-                        <input
-                            type="number"
-                            id="exitFee"
-                            step="any"
-                            value="0"
-                        />
-                    </div>
+                <div class="fees">
+                    <label for="entryFee">Entry Fee(%):</label>
+                    <input type="number" id="entryFee" step="0.01" value="0" />
+                    <label for="exitFee">Exit Fee(%):</label>
+                    <input type="number" id="exitFee" step="0.01" value="0" />
+                    <a href="/pages/fee-info.html" class="info-icon">
+                        ?
+                        <span class="info-tooltip"
+                            >Click to check the fees for each exchange.</span
+                        >
+                    </a>
                 </div>
-                <button type="button" class="button" onclick="calculatePNL()">
+                <button
+                    type="button"
+                    class="button"
+                    id="calculate-btn"
+                    onclick="calculatePNL()"
+                >
                     Calculate
                 </button>
             </form>
             <div id="result"></div>
         </div>
-        <script src="/scripts/pnl.js"></script>
     </body>
 </html>
