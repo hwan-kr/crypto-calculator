@@ -180,3 +180,23 @@ h2 {
     background-color: #e9ecef;
     border-radius: 4px;
 }
+
+/* 수수료 정보 팝업 */
+.fee-info-popup {
+    display: none; /* 기본적으로 팝업은 숨겨져 있습니다. */
+    position: absolute;
+    width: auto;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* 팝업 위치를 적절히 조정합니다. */
+    top: 30px;
+    right: 0;
+}
+
+/* 활성화된 팝업 스타일 */
+.fee-info-popup.active {
+    display: block;
+}
